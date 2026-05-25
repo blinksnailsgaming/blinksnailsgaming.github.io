@@ -34,4 +34,239 @@ body {
   padding: 24px 0 10px;
   background: radial-gradient(circle at top, #3b1a2f 0%, #050308 55%, #000000 100%);
   border-bottom: 1px solid rgba(247,198,183,0.35);
-  box-shadow:
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #f7c6b7;
+  text-shadow: 0 0 18px rgba(255,155,191,0.9);
+}
+
+.hero-subtitle {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #ffdde9;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-nav {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-nav a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(247,198,183,0.6);
+  color: #fdf5ff;
+  text-decoration: none;
+  background: rgba(10, 5, 15, 0.8);
+  transition: 0.2s ease;
+}
+
+.hero-nav a:hover {
+  background: linear-gradient(135deg, #f7c6b7, #ff9bbf);
+  color: #050308;
+  box-shadow: 0 0 18px rgba(255,155,191,0.8);
+}
+
+/* -------------------- SECTIONS -------------------- */
+
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(247,198,183,0.08), rgba(255,155,191,0.03));
+  border-radius: 18px;
+  border: 1px solid rgba(247,198,183,0.35);
+  box-shadow: 0 0 25px rgba(247,198,183,0.18);
+}
+
+h2 {
+  color: var(--accent-rose-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* -------------------- PHOTOCARDS -------------------- */
+
+.photocard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photocard {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid rgba(247,198,183,0.5);
+  box-shadow: 0 0 18px rgba(255,155,191,0.35);
+  transition: 0.2s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.photocard p {
+  margin-top: 10px;
+  color: #ffb7e5;
+  font-weight: 600;
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hero-header">
+  <div class="hero-inner">
+    <h1 class="hero-title">blinksnailsgaming</h1>
+    <p class="hero-subtitle">gamer · collector · lucha libre vibes</p>
+
+    <nav class="hero-nav">
+      <a href="#about">About</a>
+      <a href="#lucha">Lucha Libre</a>
+      <a href="#laparka">La Parka</a>
+      <a href="#games">Games</a>
+      <a href="#fifavspes">FIFA vs PES</a>
+      <a href="#music">Music</a>
+    </nav>
+  </div>
+</header>
+
+<!-- -------------------- ABOUT -------------------- -->
+
+<section id="about">
+  <h2>About</h2>
+  <p>Hola, soy un chico gamer con vibes chill, pasión por la lucha libre mexicana y un estilo que mezcla gaming, cultura latina y energía K‑pop.</p>
+</section>
+
+<!-- -------------------- LUCHA LIBRE -------------------- -->
+
+<section id="lucha">
+  <h2>Lucha Libre Mexicana</h2>
+  <p>La lucha libre mexicana es una tradición deportiva llena de historia, máscaras icónicas y personajes que representan fuerza, cultura y espectáculo.</p>
+  <p>Es un deporte que mezcla acrobacia, teatro y emoción pura. Entre sus grandes figuras, una de las más queridas es La Parka.</p>
+</section>
+
+<!-- -------------------- LA PARKA -------------------- -->
+
+<section id="laparka">
+  <h2>La Parka (AAA)</h2>
+  <p>La Parka es uno de los luchadores más emblemáticos de AAA. Su traje de esqueleto, su carisma y su estilo único lo convirtieron en una leyenda.</p>
+  <p>Con humor, baile y movimientos ágiles, conectó con el público como pocos luchadores lo han hecho. Su legado sigue vivo en la memoria de los fans.</p>
+</section>
+
+<!-- -------------------- GAMES -------------------- -->
+
+<section id="games">
+  <h2>Games</h2>
+  <div class="photocard-grid">
+    <div class="photocard"><p>Rocket League</p></div>
+    <div class="photocard"><p>Fortnite</p></div>
+    <div class="photocard"><p>Minecraft</p></div>
+    <div class="photocard"><p>Valorant</p></div>
+    <div class="photocard"><p>Genshin Impact</p></div>
+    <div class="photocard"><p>FIFA 08</p></div>
+  </div>
+</section>
+
+<!-- -------------------- FIFA VS PES (INSERTADO AQUÍ) -------------------- -->
+
+<section id="fifavspes">
+  <h2 style="color:#ff4d4d;">FIFA vs PES</h2>
+
+  <div style="
+    background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255,0,0,0.4);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.25);
+  ">
+
+    <p style="color:#ffffff; font-weight:600;">
+      La rivalidad más grande del fútbol virtual: <span style="color:#ff4d4d;">FIFA</span> vs 
+      <span style="color:#ffffff; background:#ff4d4d; padding:2px 6px; border-radius:4px;">PES</span>.
+    </p>
+
+    <p>
+      <span style="color:#ff4d4d; font-weight:600;">FIFA</span> destacó por sus licencias oficiales y su estilo arcade.  
+      <span style="color:#ffffff; background:#ff4d4d; padding:2px 6px; border-radius:4px;">PES</span> brilló por su jugabilidad realista y control total del balón.
+    </p>
+
+    <div style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+      margin-top:20px;
+    ">
+
+      <div style="
+        background:rgba(255,0,0,0.15);
+        padding:15px;
+        border-radius:12px;
+        border:1px solid rgba(255,0,0,0.4);
+      ">
+        <h3 style="color:#ff4d4d; text-transform:uppercase;">FIFA</h3>
+        <p>✔ Licencias oficiales</p>
+        <p>✔ Modos variados</p>
+        <p>✔ Estilo arcade rápido</p>
+      </div>
+
+      <div style="
+        background:rgba(255,255,255,0.1);
+        padding:15px;
+        border-radius:12px;
+        border:1px solid rgba(255,255,255,0.3);
+      ">
+        <h3 style="color:#ffffff; background:#ff4d4d; padding:4px 8px; border-radius:6px; display:inline-block;">PES</h3>
+        <p>✔ Jugabilidad realista</p>
+        <p>✔ Física del balón superior</p>
+        <p>✔ Control total del jugador</p>
+      </div>
+
+    </div>
+
+    <p style="margin-top:20px; font-weight:600; color:#ffb7e5;">
+      Ambos marcaron generaciones enteras de gamers.
+    </p>
+
+  </div>
+</section>
+
+<!-- -------------------- MUSIC -------------------- -->
+
+<section id="music">
+  <h2>Music</h2>
+  <div class="photocard-grid">
+    <div class="photocard"><p>TWICE – Feel Special</p></div>
+    <div class="photocard"><p>TWICE – Fancy</p></div>
+    <div class="photocard"><p>Montez de Durango</p></div>
+    <div class="photocard"><p>Horóscopos de Durango</p></div>
+    <div class="photocard"><p>Propiedad de Durango</p></div>
+    <div class="photocard"><p>Dilated Peoples</p></div>
+  </div>
+</section>
+
+</body>
+</html>
