@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>blinksnailsgaming</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* -------------------- ROSE GOLD FUTURISTIC THEME -------------------- */
+
+:root {
+  --bg-main: #050308;
+  --bg-card: rgba(20, 10, 25, 0.85);
+  --accent-rose-gold: #f7c6b7;
+  --accent-rose-deep: #ff9bbf;
+  --text-main: #fdf5ff;
+}
+
+body {
+  background: radial-gradient(circle at top, #3b1a2f 0%, #050308 45%, #000000 100%);
+  color: var(--text-main);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------- HEADER -------------------- */
+
+.hero-header {
+  width: 100%;
+  padding: 24px 0 10px;
+  background: radial-gradient(circle at top, #3b1a2f 0%, #050308 55%, #000000 100%);
+  border-bottom: 1px solid rgba(247,198,183,0.35);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #f7c6b7;
+  text-shadow: 0 0 18px rgba(255,155,191,0.9);
+}
+
+.hero-subtitle {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #ffdde9;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-nav {
+  margin-top: 14px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-nav a {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(247,198,183,0.6);
+  color: #fdf5ff;
+  text-decoration: none;
+  background: rgba(10, 5, 15, 0.8);
+  transition: 0.2s ease;
+}
+
+.hero-nav a:hover {
+  background: linear-gradient(135deg, #f7c6b7, #ff9bbf);
+  color: #050308;
+  box-shadow: 0 0 18px rgba(255,155,191,0.8);
+}
+
+/* -------------------- SECTIONS -------------------- */
+
+section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(247,198,183,0.08), rgba(255,155,191,0.03));
+  border-radius: 18px;
+  border: 1px solid rgba(247,198,183,0.35);
+  box-shadow: 0 0 25px rgba(247,198,183,0.18);
+}
+
+h2 {
+  color: var(--accent-rose-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* -------------------- PHOTOCARDS -------------------- */
+
+.photocard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.photocard {
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid rgba(247,198,183,0.5);
+  box-shadow: 0 0 18px rgba(255,155,191,0.35);
+  transition: 0.2s ease;
+  text-align: center;
+  padding: 10px;
+}
+
+.photocard img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.photocard:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 28px rgba(255,155,191,0.6);
+}
+
+.photocard p {
+  margin-top: 10px;
+  color: #ffb7e5;
+  font-weight: 600;
+}
+
+/* -------------------- KPOP SUBTITLES -------------------- */
+
+.kpop-sub {
+  font-size: 1rem;
+  color: #ffb7e5;
+  text-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+  font-weight: 600;
+  opacity: 0;
+  animation: subtitleFade 1.5s ease forwards;
+  margin: 12px 0;
+}
+
+@keyframes subtitleFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="hero-header">
+  <div class="hero-inner">
+    <h1 class="hero-title">blinksnailsgaming</h1>
+    <p class="hero-subtitle">gamer · collector · k‑pop vibes</p>
+
+    <nav class="hero-nav">
+      <a href="#about">About</a>
+      <a href="#story">My Story</a>
+      <a href="#games">Games</a>
+      <a href="#music">Music</a>
+    </nav>
+  </div>
+</header>
+
+<!-- -------------------- ABOUT -------------------- -->
+
+<section id="about">
+  <h2>About</h2>
+  <p>Hola, soy un chico gamer con vibes chill, K‑pop energy y una pasión enorme por coleccionar, crear y compartir mis mundos favoritos.</p>
+</section>
+
+<!-- -------------------- STORY MV -------------------- -->
+
+<section id="story">
+  <h2>My Story</h2>
+
+  <p class="kpop-sub">[00:00] Cuando era niño… el mundo iba rápido, pero yo no.</p>
+  <p class="kpop-sub">[00:04] Aprendí tarde. Caminé lento. Pero nunca me detuve.</p>
+  <p class="kpop-sub">[00:09] El inglés era un muro enorme… y yo solo hablaba español.</p>
+  <p class="kpop-sub">[00:13] En la escuela… risas, burlas, miradas que dolían.</p>
+  <p class="kpop-sub">[00:18] Pero incluso así… seguí adelante.</p>
+  <p class="kpop-sub">[00:22] [Beat drop] Junio 16, 2021 — mi primer paso real.</p>
+  <p class="kpop-sub">[00:25] Subí mi primer video… bajo el nombre “necaxasoccerfan1”.</p>
+  <p class="kpop-sub">[00:30] Luego cambié. Crecí. Busqué quién era.</p>
+  <p class="kpop-sub">[00:33] Ayano Gaming → Maurisio Mago Juega → Blinksnailsgaming.</p>
+  <p class="kpop-sub">[00:38] Cada nombre… una versión nueva de mí.</p>
+  <p class="kpop-sub">[00:42] Empecé con juegos móviles… luego consola… luego más.</p>
+  <p class="kpop-sub">[00:46] Cada video era un “sí puedo”.</p>
+  <p class="kpop-sub">[00:49] Cada sub era un “no estoy solo”.</p>
+  <p class="kpop-sub">[00:53] 10 subs… 50… 80… 102.</p>
+  <p class="kpop-sub">[00:57] No es un número. Es una historia.</p>
+  <p class="kpop-sub">[01:01] La historia de alguien que aprendió tarde…</p>
+  <p class="kpop-sub">[01:04] …pero nunca dejó de aprender.</p>
+  <p class="kpop-sub">[01:08] La historia de alguien que fue burlado…</p>
+  <p class="kpop-sub">[01:11] …pero nunca se rompió.</p>
+  <p class="kpop-sub">[01:15] La historia de alguien que empezó pequeño…</p>
+  <p class="kpop-sub">[01:18] …y sigue creciendo.</p>
+  <p class="kpop-sub">[01:22] Este no es el final.</p>
+  <p class="kpop-sub">[01:24] Este es mi comeback.</p>
+</section>
+
+<!-- -------------------- GAMES -------------------- -->
+
+<section id="games">
+  <h2>Games</h2>
+  <div class="photocard-grid">
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/e/e0/Rocket_League_coverart.jpg">
+      <p>Rocket League</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/FortniteCover.jpg">
+      <p>Fortnite</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png">
+      <p>Minecraft</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/5f/Valorant_cover_art.jpg">
+      <p>Valorant</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/47/Genshin_Impact_cover.jpg">
+      <p>Genshin Impact</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://upload.wikimedia.org/wikipedia/en/2/2e/FIFA_08_Cover.jpg">
+      <p>FIFA 08</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- -------------------- MUSIC -------------------- -->
+
+<section id="music">
+  <h2>Music</h2>
+  <div class="photocard-grid">
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/8p4zF0K.jpeg">
+      <p>TWICE – Feel Special</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/2eJt8zM.jpeg">
+      <p>TWICE – Fancy</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/9x2k7yB.jpeg">
+      <p>Montez de Durango</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/7o4zY1Q.jpeg">
+      <p>Horóscopos de Durango</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/3Q8eJ8T.jpeg">
+      <p>Propiedad de Durango</p>
+    </div>
+
+    <div class="photocard">
+      <img src="https://i.imgur.com/4mQk5pZ.jpeg">
+      <p>Dilated Peoples</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
