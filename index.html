@@ -1,280 +1,719 @@
 
 
     
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>blinksnailsgaming</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>LISA — Dual Identity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --pink: #ff4ecb;
+      --pink-soft: #ff9ee6;
+      --bg-dark: #050509;
+      --bg-card: #101018;
+      --bg-street: #050507;
+      --white: #f5f5f5;
+      --gray: #b8b8c2;
+      --red: #ff3b3b;
+    }
 
-<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-/* -------------------- ROSE GOLD FUTURISTIC THEME -------------------- */
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1a1020 0, #050509 55%);
+      color: var(--white);
+      line-height: 1.5;
+    }
 
-:root {
-  --bg-main: #050308;
-  --bg-card: rgba(20, 10, 25, 0.85);
-  --accent-rose-gold: #f7c6b7;
-  --accent-rose-deep: #ff9bbf;
-  --text-main: #fdf5ff;
-}
+    a {
+      color: var(--pink-soft);
+      text-decoration: none;
+    }
 
-body {
-  background: radial-gradient(circle at top, #3b1a2f 0%, #050308 45%, #000000 100%);
-  color: var(--text-main);
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-/* -------------------- HEADER -------------------- */
+    /* Layout */
 
-.hero-header {
-  width: 100%;
-  padding: 24px 0 10px;
-  background: radial-gradient(circle at top, #3b1a2f 0%, #050308 55%, #000000 100%);
-  border-bottom: 1px solid rgba(247,198,183,0.35);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
+    header {
+      padding: 24px 20px;
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 5, 9, 0.9);
+      z-index: 10;
+    }
 
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 16px;
-  text-align: center;
-}
+    .logo {
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--pink);
+    }
 
-.hero-title {
-  font-size: 2.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: #f7c6b7;
-  text-shadow: 0 0 18px rgba(255,155,191,0.9);
-}
+    nav a {
+      margin-left: 16px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray);
+    }
 
-.hero-subtitle {
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: #ffdde9;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+    nav a:hover {
+      color: var(--pink-soft);
+    }
 
-.hero-nav {
-  margin-top: 14px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 16px 80px;
+    }
 
-.hero-nav a {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(247,198,183,0.6);
-  color: #fdf5ff;
-  text-decoration: none;
-  background: rgba(10, 5, 15, 0.8);
-  transition: 0.2s ease;
-}
+    section {
+      margin-bottom: 64px;
+    }
 
-.hero-nav a:hover {
-  background: linear-gradient(135deg, #f7c6b7, #ff9bbf);
-  color: #050308;
-  box-shadow: 0 0 18px rgba(255,155,191,0.8);
-}
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
 
-/* -------------------- SECTIONS -------------------- */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: var(--pink);
+    }
 
-section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(247,198,183,0.08), rgba(255,155,191,0.03));
-  border-radius: 18px;
-  border: 1px solid rgba(247,198,183,0.35);
-  box-shadow: 0 0 25px rgba(247,198,183,0.18);
-}
+    .dual-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
 
-h2 {
-  color: var(--accent-rose-gold);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+    .card {
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      border: 1px solid #262636;
+      background: radial-gradient(circle at top left, #1b1224 0, #101018 55%);
+    }
 
-/* -------------------- PHOTOCARDS -------------------- */
+    .card-street {
+      border-radius: 14px;
+      padding: 18px 18px 20px;
+      border: 1px solid #3a1a2a;
+      background:
+        linear-gradient(135deg, #050507 0, #0b050b 40%, #1a0b1f 100%),
+        url("about:blank");
+      box-shadow: 0 0 22px rgba(255, 78, 203, 0.18);
+    }
 
-.photocard-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
-}
+    .card-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
 
-.photocard {
-  background: var(--bg-card);
-  border-radius: 16px;
-  border: 1px solid rgba(247,198,183,0.5);
-  box-shadow: 0 0 18px rgba(255,155,191,0.35);
-  transition: 0.2s ease;
-  text-align: center;
-  padding: 10px;
-}
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
-.photocard p {
-  margin-top: 10px;
-  color: #ffb7e5;
-  font-weight: 600;
-}
+    .card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 6px;
+    }
 
-</style>
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #333;
+      color: var(--gray);
+    }
+
+    .pill-pink {
+      border-color: var(--pink);
+      color: var(--pink-soft);
+    }
+
+    .pill-red {
+      border-color: var(--red);
+      color: #ffb3b3;
+    }
+
+    .list {
+      margin-top: 6px;
+      padding-left: 16px;
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    .list li {
+      margin-bottom: 4px;
+    }
+
+    .subheading {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: var(--pink-soft);
+    }
+
+    /* Core games grid */
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .game-card {
+      background: #101018;
+      border-radius: 12px;
+      border: 1px solid #2a2034;
+      padding: 12px 14px 14px;
+      transition: 0.25s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 18px rgba(255, 78, 203, 0.25);
+    }
+
+    .game-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--pink-soft);
+      margin-bottom: 4px;
+    }
+
+    .game-tagline {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 4px;
+    }
+
+    .game-text {
+      font-size: 0.8rem;
+      color: #d0d0dd;
+    }
+
+    footer {
+      border-top: 1px solid #222;
+      padding: 18px 16px 32px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+
+    @media (max-width: 720px) {
+      .section-title {
+        font-size: 1.6rem;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      nav a {
+        margin: 4px 12px 0 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header class="hero-header">
-  <div class="hero-inner">
-    <h1 class="hero-title">blinksnailsgaming</h1>
-    <p class="hero-subtitle">gamer · collector · lucha libre vibes</p>
-
-   <nav class="hero-nav">
- <nav class="hero-nav">
-
-  <a href="#about">👤 About</a>
-
-  <a href="#lucha">🤼‍♂️ Lucha Libre</a>
-
-  <a href="#laparka">💀 La Parka</a>
-
-  <a href="#games">🎮 Games</a>
-
-  <a href="#fifavspes">⚽ FIFA vs PES</a>
-
-  <a href="#music">🎵 Music</a>
-</nav>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">LISA // BLINKSNAILS GAMING</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#music">Music</a>
+      <a href="#blinks-united">Blinks United</a>
+      <a href="#streams">Streams</a>
+      <a href="#channels">Channels</a>
+      <a href="#goals">Goals</a>
+      <a href="#games">Games</a>
+      <a href="#aesthetic">Aesthetic</a>
+      <a href="#lucha">Lucha Libre</a>
+      <a href="#fifa-pes">FIFA vs PES</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- -------------------- ABOUT -------------------- -->
+  <main>
+    <!-- HOME -->
+    <section id="home">
+      <div class="section-label">Welcome</div>
+      <h1 class="section-title">Two sides. One creator.</h1>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">LISA — Created with Style.</div>
+          <p>
+            Clean, organized, aesthetic. Pink and black. I’m a creator who treats
+            my channel like a club, my content like a career, and my style like a
+            brand.
+          </p>
+          <div class="pill-row">
+            <span class="pill pill-pink">Pink / Black</span>
+            <span class="pill">Clean UI</span>
+            <span class="pill">EA‑style</span>
+          </div>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">LISA — Rude, loud, and street‑coded.</div>
+          <p>
+            I talk sh*t, I play street football, I love chaos. Same person,
+            different energy. If you see BLINKSNAILS GAMING, that’s me.
+          </p>
+          <div class="pill-row">
+            <span class="pill pill-red">Street Mode</span>
+            <span class="pill">Graffiti</span>
+            <span class="pill">Neon</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="about">
-  <h2>About</h2>
-  <p>Hola, soy un chico gamer con vibes chill, pasión por la lucha libre mexicana y un estilo que mezcla gaming, cultura latina y energía K‑pop.</p>
-</section>
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Who I am</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Formal side</div>
+          <p>
+            I’m LISA, also known as BLINKSNAILS GAMING. I like things clean,
+            structured, and aesthetic. I build layouts, playlists, and teams like
+            they’re part of a bigger universe.
+          </p>
+          <p>
+            My site, my channels, and my club all follow one rule:
+            <strong>Created with Style.</strong>
+          </p>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Rude side</div>
+          <p>
+            Same LISA, different filter. I swear, I trash‑talk, I play like it’s
+            FIFA Street even when it’s not. I like chaos, noise, and energy.
+          </p>
+          <p>
+            If it feels like a back‑alley match under neon lights, that’s my
+            comfort zone.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<!-- -------------------- LUCHA LIBRE -------------------- -->
+    <!-- MUSIC -->
+    <section id="music">
+      <div class="section-label">Music</div>
+      <h2 class="section-title">Soundtrack of my universe</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Formal playlist</div>
+          <p>
+            Cumbia, duranguense, Dipset‑era hip‑hop, and clean gaming vibes. This
+            is the music I use to focus, edit, and build my world.
+          </p>
+          <ul class="list">
+            <li>Organized playlists</li>
+            <li>Soft pink / black covers</li>
+            <li>Chill but confident energy</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Street playlist</div>
+          <p>
+            Loud, rude, and heavy. Tracks that feel like alley football, lucha
+            libre entrances, and late‑night chaos.
+          </p>
+          <ul class="list">
+            <li>Trash‑talk background music</li>
+            <li>Hype match intros</li>
+            <li>Clips and highlight soundtracks</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section id="lucha">
-  <h2>Lucha Libre Mexicana</h2>
-  <p>La lucha libre mexicana es una tradición deportiva llena de historia, máscaras icónicas y personajes que representan fuerza, cultura y espectáculo.</p>
-  <p>Es un deporte que mezcla acrobacia, teatro y emoción pura. Entre sus grandes figuras, una de las más queridas es La Parka.</p>
-</section>
+    <!-- BLINKS UNITED -->
+    <section id="blinks-united">
+      <div class="section-label">Club</div>
+      <h2 class="section-title">Blinks United — Created with Style.</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Official club identity</div>
+          <p>
+            <strong>Motto:</strong> Created with Style.<br />
+            A club built on clean design, pink/black colors, and a formal
+            football identity.
+          </p>
+          <ul class="list">
+            <li>Home &amp; away kits in pink/black</li>
+            <li>Organized roster and positions</li>
+            <li>Stadium page and crest concept</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Street Blinks United</div>
+          <p>
+            Same club, but on concrete. Graffiti logos, neon trims, and
+            street‑football rules.
+          </p>
+          <ul class="list">
+            <li>Street kits with graffiti details</li>
+            <li>Asphalt courts instead of grass</li>
+            <li>Trash‑talk friendly atmosphere</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- -------------------- LA PARKA -------------------- -->
+    <!-- STREAM SCHEDULE -->
+    <section id="streams">
+      <div class="section-label">Streams</div>
+      <h2 class="section-title">Stream schedule</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Formal schedule</div>
+          <p>My official streaming rhythm (subject to vibes, but still):</p>
+          <ul class="list">
+            <li>Monday: Off / planning</li>
+            <li>Tuesday–Thursday: 7 PM – 10 PM</li>
+            <li>Friday: 8 PM – Midnight</li>
+            <li>Saturday: Random pop‑up streams</li>
+            <li>Sunday: Chill / music / editing</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Rude schedule</div>
+          <p>
+            I go live when I feel like cooking people on the field or in the
+            ring.
+          </p>
+          <ul class="list">
+            <li>Weekdays: Night‑grind streams</li>
+            <li>Fridays: Hype nights</li>
+            <li>Saturdays: Street‑mode chaos</li>
+            <li>Sundays: Chill or trash‑talk fútbol</li>
+            <li>Pop‑ups: If I’m online, pull up.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section id="laparka">
-  <h2>La Parka (AAA)</h2>
-  <p>La Parka es uno de los luchadores más emblemáticos de AAA. Su traje de esqueleto, su carisma y su estilo único lo convirtieron en una leyenda.</p>
-  <p>Con humor, baile y movimientos ágiles, conectó con el público como pocos luchadores lo han hecho. Su legado sigue vivo en la memoria de los fans.</p>
-</section>
+    <!-- CHANNELS -->
+    <section id="channels">
+      <div class="section-label">Channels</div>
+      <h2 class="section-title">Where to find me</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Official channels</div>
+          <p>These are my main platforms:</p>
+          <ul class="list">
+            <li>
+              <strong>YouTube:</strong>
+              <a href="https://www.youtube.com/@BLINKSNAILS_GAMING.31312" target="_blank">
+                BLINKSNAILS GAMING
+              </a>
+            </li>
+            <li>
+              <strong>Twitch:</strong>
+              <a href="https://www.twitch.tv/blinksnails_gaming" target="_blank">
+                BLINKSNAILS_GAMING
+              </a>
+            </li>
+          </ul>
+          <p class="subheading">Brand identity</p>
+          <ul class="list">
+            <li>Unified name across platforms</li>
+            <li>Pink/black aesthetic</li>
+            <li>Clean thumbnails and organized playlists</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Same name, same attitude</div>
+          <p>
+            If you see BLINKSNAILS GAMING anywhere, that’s me — same name,
+            same energy.
+          </p>
+          <ul class="list">
+            <li>YouTube: trash‑talk clips and FIFA Street vibes</li>
+            <li>Twitch: live reactions, swearing allowed, unfiltered LISA</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- -------------------- GAMES -------------------- -->
+    <!-- GOALS / THINGS I WANT TO TRY -->
+    <section id="goals">
+      <div class="section-label">Goals</div>
+      <h2 class="section-title">Things I want to try</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Formal goals</div>
+          <p>Things I want to try, learn, or experience as a creator:</p>
+          <ul class="list">
+            <li>Streaming daily for a week</li>
+            <li>Making a full YouTube series</li>
+            <li>Learning smoother video transitions</li>
+            <li>Trying new game genres</li>
+            <li>Creating custom FIFA kits</li>
+            <li>Making themed music mixes / playlists</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Chaos goals</div>
+          <p>Sh*t I wanna try just because it sounds fun or wild:</p>
+          <ul class="list">
+            <li>Trash‑talk only stream</li>
+            <li>FIFA Street‑style challenges</li>
+            <li>24‑hour stream attempt</li>
+            <li>Trying a rage‑game live</li>
+            <li>Rude highlight montage</li>
+            <li>Street‑style IRL content</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section id="games">
-  <h2>Games</h2>
-  <div class="photocard-grid">
-    <div class="photocard"><p>Rocket League</p></div>
-    <div class="photocard"><p>Fortnite</p></div>
-    <div class="photocard"><p>Minecraft</p></div>
-    <div class="photocard"><p>Valorant</p></div>
-    <div class="photocard"><p>Genshin Impact</p></div>
-    <div class="photocard"><p>FIFA 08</p></div>
-  </div>
-</section>
-
-<!-- -------------------- FIFA VS PES (INSERTADO AQUÍ) -------------------- -->
-
-<section id="fifavspes">
-  <h2 style="color:#ff4d4d;">FIFA vs PES</h2>
-
-  <div style="
-    background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(255,255,255,0.05));
-    border: 1px solid rgba(255,0,0,0.4);
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 0 20px rgba(255,0,0,0.25);
-  ">
-
-    <p style="color:#ffffff; font-weight:600;">
-      La rivalidad más grande del fútbol virtual: <span style="color:#ff4d4d;">FIFA</span> vs 
-      <span style="color:#ffffff; background:#ff4d4d; padding:2px 6px; border-radius:4px;">PES</span>.
-    </p>
-
-    <p>
-      <span style="color:#ff4d4d; font-weight:600;">FIFA</span> destacó por sus licencias oficiales y su estilo arcade.  
-      <span style="color:#ffffff; background:#ff4d4d; padding:2px 6px; border-radius:4px;">PES</span> brilló por su jugabilidad realista y control total del balón.
-    </p>
-
-    <div style="
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-      margin-top:20px;
-    ">
-
-      <div style="
-        background:rgba(255,0,0,0.15);
-        padding:15px;
-        border-radius:12px;
-        border:1px solid rgba(255,0,0,0.4);
-      ">
-        <h3 style="color:#ff4d4d; text-transform:uppercase;">FIFA</h3>
-        <p>✔ Licencias oficiales</p>
-        <p>✔ Modos variados</p>
-        <p>✔ Estilo arcade rápido</p>
+    <!-- GAMES I WANT TO STREAM -->
+    <section id="games">
+      <div class="section-label">Games</div>
+      <h2 class="section-title">Games I want to stream</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Clean list</div>
+          <p>Games I want to stream soon:</p>
+          <ul class="list">
+            <li>FIFA</li>
+            <li>PES</li>
+            <li>Rocket League</li>
+            <li>Fortnite</li>
+            <li>Minecraft</li>
+            <li>Valorant</li>
+            <li>Genshin Impact</li>
+            <li>Need for Speed</li>
+            <li>UFC</li>
+            <li>NBA 2K</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Hype list</div>
+          <p>Games for full street‑mode energy:</p>
+          <ul class="list">
+            <li>FIFA Street‑style challenges</li>
+            <li>Rage games</li>
+            <li>Trash‑talk FIFA nights</li>
+            <li>COD chaos streams</li>
+            <li>Mortal Kombat</li>
+            <li>The Last of Us</li>
+            <li>Fight Night Round</li>
+            <li>Gran Turismo</li>
+          </ul>
+        </div>
       </div>
 
-      <div style="
-        background:rgba(255,255,255,0.1);
-        padding:15px;
-        border-radius:12px;
-        border:1px solid rgba(255,255,255,0.3);
-      ">
-        <h3 style="color:#ffffff; background:#ff4d4d; padding:4px 8px; border-radius:6px; display:inline-block;">PES</h3>
-        <p>✔ Jugabilidad realista</p>
-        <p>✔ Física del balón superior</p>
-        <p>✔ Control total del jugador</p>
+      <!-- CORE GAMES -->
+      <div style="margin-top: 28px;">
+        <div class="section-label">Core games</div>
+        <h3 class="section-title" style="font-size:1.4rem;">Core games I love</h3>
+        <p style="font-size:0.9rem;color:var(--gray);margin-bottom:10px;">
+          The four games that shaped my style — lucha libre, street football, and World Cup energy.
+        </p>
+        <div class="games-grid">
+          <div class="game-card">
+            <div class="game-title">Lucha Libre AAA: Héroes del Ring (PS3)</div>
+            <div class="game-tagline">My lucha libre roots.</div>
+            <div class="game-text">
+              Official AAA wrestling game featuring La Parka, Cibernético, Vampiro, and more.
+              This is where my Mexican wrestling and street energy come from.
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">FIFA Street 2012</div>
+            <div class="game-tagline">My origin game.</div>
+            <div class="game-text">
+              Fast, fluid, stylish gameplay with team creation and pure street football energy.
+              This game shaped my whole universe.
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">2010 FIFA World Cup South Africa</div>
+            <div class="game-tagline">World Cup nostalgia.</div>
+            <div class="game-text">
+              Bright colors, loud crowds, and classic PS3‑era football.
+              One of the most iconic World Cup games.
+            </div>
+          </div>
+          <div class="game-card">
+            <div class="game-title">2014 FIFA World Cup Brazil</div>
+            <div class="game-tagline">Brazilian hype.</div>
+            <div class="game-text">
+              Vibrant, carnival‑style presentation with legendary atmosphere.
+              A perfect match for my energy and aesthetic.
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-    </div>
+    <!-- AESTHETIC -->
+    <section id="aesthetic">
+      <div class="section-label">Visuals</div>
+      <h2 class="section-title">Aesthetic</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Dark‑cute, pink/black</div>
+          <p>
+            My aesthetic is dark‑cute, feminine, and clean. Pink and black,
+            K‑pop/J‑pop inspired, with soft glows and sharp lines.
+          </p>
+          <ul class="list">
+            <li>Pink/black gradients</li>
+            <li>Minimal UI with strong typography</li>
+            <li>Soft neon edges</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Street‑coded visuals</div>
+          <p>
+            Graffiti, asphalt textures, and neon pink tags. It still looks
+            designed, but it feels like a wall under a bridge at midnight.
+          </p>
+          <ul class="list">
+            <li>Spray‑paint accents</li>
+            <li>Rough textures with clean overlays</li>
+            <li>Street football and lucha energy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <p style="margin-top:20px; font-weight:600; color:#ffb7e5;">
-      Ambos marcaron generaciones enteras de gamers.
-    </p>
+    <!-- LUCHA LIBRE -->
+    <section id="lucha">
+      <div class="section-label">Lucha Libre</div>
+      <h2 class="section-title">Lucha Libre &amp; La Parka</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Respect for the mask</div>
+          <p>
+            I love lucha libre, especially AAA and La Parka. It’s theatrical,
+            technical, and full of identity.
+          </p>
+          <ul class="list">
+            <li>La Parka (AAA) as my favorite luchador</li>
+            <li>Lucha Libre AAA: Héroes del Ring (PS3) as a core game</li>
+            <li>Mask, entrance, and character as part of my style</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Rudo energy</div>
+          <p>
+            Lucha libre is pure street theatre: masks, taunts, and big moves.
+            It’s the same energy I bring to my streams and my club.
+          </p>
+          <ul class="list">
+            <li>La Parka’s attitude as inspiration</li>
+            <li>Rudo vs técnico as my two sides</li>
+            <li>Ring energy in my gaming style</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</section>
+    <!-- FIFA vs PES -->
+    <section id="fifa-pes">
+      <div class="section-label">Compare</div>
+      <h2 class="section-title">FIFA vs PES</h2>
+      <div class="dual-wrapper">
+        <div class="card">
+          <div class="card-label">Player Card</div>
+          <div class="card-title">Red &amp; white comparison</div>
+          <p>
+            A clean breakdown of FIFA vs PES — mechanics, feel, and style.
+          </p>
+          <ul class="list">
+            <li>FIFA: presentation, licenses, World Cup games</li>
+            <li>PES: gameplay feel, ball physics, classic PS3 era</li>
+            <li>Both as part of my football history</li>
+          </ul>
+        </div>
+        <div class="card-street">
+          <div class="card-label">Street Card</div>
+          <div class="card-title">Which one I cook people in</div>
+          <p>
+            On the street side, it’s simple: whichever game lets me embarrass
+            people harder that day wins.
+          </p>
+          <ul class="list">
+            <li>FIFA for flashy, hype moments</li>
+            <li>PES for tight, sweaty matches</li>
+            <li>Both get trash‑talk equally</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<!-- -------------------- MUSIC -------------------- -->
-
-<section id="music">
-  <h2>Music</h2>
-  <div class="photocard-grid">
-    <div class="photocard"><p>TWICE – Feel Special</p></div>
-    <div class="photocard"><p>TWICE – Fancy</p></div>
-    <div class="photocard"><p>Montez de Durango</p></div>
-    <div class="photocard"><p>Horóscopos de Durango</p></div>
-    <div class="photocard"><p>Propiedad de Durango</p></div>
-    <div class="photocard"><p>Dilated Peoples</p></div>
-  </div>
-</section>
-
+  <footer>
+    LISA / BLINKSNAILS GAMING — Two sides, one universe. Created with Style.
+  </footer>
 </body>
 </html>
